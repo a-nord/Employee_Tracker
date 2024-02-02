@@ -1,18 +1,25 @@
 {
-    "name": "employee_tracker",
-    "version": "1.0.0",
-    "main": "server.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node server.js"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "description": "",
-    "dependencies": {
-        "express": "^4.18.2",
-        "inquirer": "^8.2.4",
-        "mysql2": "^3.9.1"
-    }
+  "name": "employee_tracker",
+  "version": "1.0.0",
+  "description": "app so that business owners can track employees",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a-nord/Employee_Tracker.git"
+  },
+  "author": "Ashley Nord",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/a-nord/Employee_Tracker/issues"
+  },
+  "homepage": "https://github.com/a-nord/Employee_Tracker#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "inquirer": "^8.2.4",
+    "mysql2": "^3.9.1"
+  }
 }
