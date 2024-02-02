@@ -14,13 +14,18 @@
   - [Contact](#questions)
 
   ## Installation  
-  
+   1.
+   2.
+   3.
+   4.
   
   ## Usage  
-  
+  This app will help business owners view and manage the departments, roles, and employees in the company so that business can be organized and planned.
+
+  <!-- Add video of how to use it -->
 
   ## Credits
-  This code was created by .
+  This code was created by Ashley Nord.
     
   ## License
   [![License: GPL v3](https://img.shields.io/badge/License-MIT-pink)](https://choosealicense.com/licenses/mit/)
