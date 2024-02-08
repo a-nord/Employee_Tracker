@@ -65,6 +65,10 @@ function loadMainPrompts() {
 					updateEmployee();
 					break;
 
+				case "Quit":
+					process.exit()
+					break;	
+
 				default:
 					break;
 			}
@@ -134,7 +138,6 @@ async function addEmployee() {
 			value: employee.id
 		}
 	});
-	managers.unshift({ name: "None", value: null });
 	inquirer.prompt([
 		{
 			type: "input",
@@ -165,6 +168,7 @@ async function addEmployee() {
 				console.log(err);
 				return;
 			}
+			getAllEmployees();
 			loadMainPrompts();
 		})
 
@@ -204,6 +208,7 @@ async function addRole() {
 				console.log(err);
 				return;
 			}
+			getAllRoles();
 			loadMainPrompts();
 		})
 
@@ -225,6 +230,7 @@ function addDepartment() {
 				console.log(err);
 				return;
 			}
+			getAllDepartments();
 			loadMainPrompts();
 		})
 
@@ -232,3 +238,45 @@ function addDepartment() {
 };
 
 //function to update roles
+async function updateEmployee() {
+	const roleQuery = await db.promise().query('SELECT * FROM role')
+	const roles = roleQuery[0].map((role) => {
+		return {
+			name: role.title,
+			value: role.id
+		}
+	});
+	const employeeQuery = await db.promise().query('SELECT * FROM employee')
+	const employees = employeeQuery[0].map((employee) => {
+		return {
+			name: `${employee.first_name} ${employee.last_name}`,
+			value: employee.id
+		}
+	});
+	inquirer.prompt([
+		{
+			type: "list",
+			message: "Choose an employee:",
+			choices: employees,
+			name: "employee_id"
+		},
+		{
+			type: "list",
+			message: "Choose their new role:",
+			choices: roles,
+			name: "role_id"
+		}
+	]
+	).then((answers) => {
+		let query = `UPDATE employee SET role_id = ${answers.role_id} WHERE id = ${answers.employee_id};`
+		db.query(query, (err, result) => {
+			if (err) {
+				console.log(err);
+				return;
+			}
+			getAllEmployees();
+			loadMainPrompts();
+		})
+
+	})
+};
