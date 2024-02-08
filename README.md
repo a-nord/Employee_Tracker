@@ -16,7 +16,8 @@
   ## Installation  
    1. Clone the [repository](https://github.com/a-nord/Employee_Tracker)
    2. Install any dependencies (npm install)
-   3. Run the schema and seeds using DBeaver app
+   3. Run the schema and seeds using DBeaver app                    
+    ![schema screenshot](images/schema.PNG)
    4. Connect to the database
    5. 'Node server.js' to start the app 
   
