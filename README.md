@@ -24,6 +24,7 @@
   This app will help business owners view and manage the departments, roles, and employees in the company so that business can be organized and planned.
 
   <video src="images/preview.mp4" controls title="Walk through video"></video>
+  
   ## Credits
 
   This code was created by Ashley Nord.
